@@ -9,43 +9,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#071026; --card:#07132a; --muted:#9aa4b2; --accent:#00aaff; --glass: rgba(255,255,255,0.03);
+      --bg:#fff6fb; /* very light pink */
+      --card:#0b0b0b; /* near black cards */
+      --muted:#3b3b3b; /* dark muted text */
+      --accent:#ff6fa3; /* pink accent */
+      --glass: rgba(255,255,255,0.06);
     }
     *{box-sizing:border-box}
     html,body{height:100%;}
-    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:linear-gradient(180deg,#050915 0%, #071026 60%);color:#e6eef6;line-height:1.45}
+    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--card);line-height:1.45;position:relative;overflow-x:hidden}
 
-    /* layout: left column + right content (like the reference) */
-    .wrap{max-width:1100px;margin:36px auto;padding:20px;display:grid;grid-template-columns:260px 1fr;gap:28px}
+    /* subtle cute tree SVG in the background */
+    .bg-tree{position:fixed;left:-60px;bottom:-40px;width:420px;opacity:0.08;pointer-events:none;z-index:0}
+
+    /* layout: left column + right content */
+    .wrap{max-width:1100px;margin:36px auto;padding:20px;display:grid;grid-template-columns:260px 1fr;gap:28px;position:relative;z-index:1}
 
     /* left sidebar */
-    .sidebar{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.01));padding:20px;border-radius:12px;position:sticky;top:28px;height:fit-content}
-    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#6fc3ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04233b;font-size:36px;margin:0 auto}
+    .sidebar{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#ffd6e9);display:flex;align-items:center;justify-content:center;font-weight:700;color:#2b0b10;font-size:36px;margin:0 auto}
     .name{text-align:center;margin-top:14px;font-size:20px;font-weight:700}
     .role{text-align:center;color:var(--muted);margin-top:6px;font-size:13px}
     .contact{margin-top:16px;font-size:13px;color:var(--muted)}
     .contact a{color:var(--accent);text-decoration:none}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:13px;margin:8px 4px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,111,163,0.08);color:var(--muted);font-size:13px;margin:8px 4px}
     .social{display:flex;gap:10px;justify-content:center;margin-top:12px}
     .social a{color:var(--muted);text-decoration:none;font-size:14px}
 
     /* content area */
     .content{display:flex;flex-direction:column;gap:18px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:20px}
-    h2{margin:0 0 10px 0;font-size:16px}
+    .card{background:#ffffff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(11,11,11,0.06)}
+    h2{margin:0 0 10px 0;font-size:16px;color:#0b0b0b}
     .muted{color:var(--muted);font-size:14px}
     .list{margin:0;padding:0;list-style:none}
-    .item{padding:12px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+    .item{padding:12px 0;border-bottom:1px dashed rgba(11,11,11,0.04)}
     .item:last-child{border-bottom:0}
-    .role-small{font-weight:600}
+    .role-small{font-weight:600;color:#0b0b0b}
 
-    /* projects / skills grid */
+    /* skills grid */
     .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .skill{background:var(--glass);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--muted)}
+    .skill{background:rgba(255,111,163,0.08);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--muted)}
 
-    /* header CTA */
-    .cta{display:flex;gap:10px;justify-content:flex-end}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
+    .btn{background:transparent;border:1px solid rgba(11,11,11,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
 
     footer{color:var(--muted);font-size:13px;text-align:center;margin-top:20px}
 
@@ -53,6 +58,15 @@
   </style>
 </head>
 <body>
+  <!-- cute tree SVG background -->
+  <svg class="bg-tree" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#5b2a2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 180 C90 150, 70 120, 100 90 C130 120, 110 150, 100 180 Z" fill="#ffc9db" opacity="0.9"/>
+      <path d="M100 90 C80 70, 60 60, 50 50 C40 40, 80 30, 100 40 C120 30, 160 40, 150 50 C140 60, 120 70, 100 90 Z" fill="#ffeff4" opacity="0.9"/>
+      <rect x="95" y="140" width="10" height="40" rx="2" fill="#8b5a4a"/>
+    </g>
+  </svg>
+
   <main class="wrap">
     <aside class="sidebar">
       <div class="avatar">RK</div>
@@ -66,9 +80,7 @@
         <div style="margin-top:12px"><strong>Email</strong><br><a href="mailto:kaurrehmat006@gmail.com">kaurrehmat006@gmail.com</a></div>
         <div style="margin-top:10px"><strong>Location</strong><br><span class="muted">New Delhi</span></div>
         <div class="social" style="margin-top:12px;justify-content:center">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Twitter</a>
+          <a href="https://github.com/Rehmat-Kaur6">GitHub</a>
         </div>
 
         <div style="margin-top:14px;text-align:center">
@@ -80,7 +92,7 @@
     <section class="content">
       <div class="card">
         <h2>About</h2>
-        <p class="muted">Undergraduate student in Computer Science & Mathematics at Ashoka University with research interests in machine learning (NLP, bioacoustics, computational modeling for healthcare and environmental data). I build models, analyze real datasets, and produce reproducible experiments and code.</p>
+        <p class="muted">Undergraduate student in Computer Science & Mathematics at Ashoka University with research interests in machine learning (particularly NLP and Computational Linguistics)</p>
       </div>
 
       <div class="card">
@@ -99,6 +111,12 @@
           </li>
 
           <li class="item">
+            <div class="role-small">Research Intern — Environmental Data (Microsoft Aurora)</div>
+            <div class="muted">May — Aug 2025</div>
+            <p class="muted">Processed weather and soil datasets using Microsoft Aurora; applied polynomial regression to estimate soil composition and prepared cleaned datasets for downstream modeling.</p>
+          </li>
+
+          <li class="item">
             <div class="role-small">Intern — L'Oréal, Summer Immersion Program</div>
             <div class="muted">June — July 2025</div>
             <p class="muted">Market research and competitive analysis in Travel Retail APAC.</p>
@@ -107,7 +125,7 @@
       </div>
 
       <div class="card">
-        <h2>Projects & Skills</h2>
+        <h2>Skills</h2>
         <div class="skills">
           <div class="skill">Python</div>
           <div class="skill">PyTorch</div>
@@ -115,12 +133,6 @@
           <div class="skill">NLP</div>
           <div class="skill">OCaml</div>
         </div>
-
-        <h2 style="margin-top:14px">Selected Projects</h2>
-        <ul class="list">
-          <li class="item"><div class="role-small">Bioacoustics model benchmarking</div><div class="muted">CNN & RNN experiments on elephant vocalizations</div></li>
-          <li class="item"><div class="role-small">PanNuke nuclei segmentation analysis</div><div class="muted">Benchmarked segmentation accuracy</div></li>
-        </ul>
       </div>
 
       <footer class="muted">Made with ♥ • Built from résumé — reach out to update colors/pages.</footer>
