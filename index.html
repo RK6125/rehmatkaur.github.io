@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rehmat Kaur — Portfolio</title>
+  <meta name="description" content="Rehmat Kaur — Computer Science & Mathematics student at Ashoka University. Machine learning, NLP, bioacoustics, digital pathology." />
+  <style>
+    :root{--accent:#0f62fe;--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2}
+    *{box-sizing:border-box}
+    body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071028 0%, #081226 60%);color:#e6eef6;margin:0;line-height:1.45}
+    .container{max-width:980px;margin:40px auto;padding:28px}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:112px;height:112px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#6fc3ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#04233b;font-size:28px}
+    h1{margin:0;font-size:28px}
+    .sub{color:var(--muted);margin-top:6px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.04);color:var(--muted);font-size:13px;margin-right:8px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:22px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:18px}
+    section h2{margin:0 0 12px 0;font-size:16px}
+    .meta{display:flex;gap:12px;flex-wrap:wrap}
+    .list{margin:0;padding:0;list-style:none}
+    .item{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+    .item:last-child{border-bottom:0}
+    .role{font-weight:600}
+    .muted{color:var(--muted);font-size:13px}
+    .skills{display:flex;gap:8px;flex-wrap:wrap}
+    .skill{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:13px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .contact{display:flex;flex-direction:column;gap:6px}
+    a{color:var(--accent);text-decoration:none}
+    @media(max-width:880px){.grid{grid-template-columns:1fr;}.container{margin:18px;padding:18px}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="avatar">RK</div>
+      <div>
+        <h1>Rehmat Kaur</h1>
+        <div class="sub">B.Sc. (Hons) in Computer Science & Mathematics — Ashoka University</div>
+        <div class="sub" style="margin-top:8px">CGPA 3.78 • Minor in Economics</div>
+        <div style="margin-top:10px" class="meta">
+          <span class="pill">Research: ML, NLP, Bioacoustics</span>
+          <span class="pill">Seeking: Research / Data Science / SWE roles</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <section class="card" aria-labelledby="about">
+          <h2 id="about">About Me</h2>
+          <p class="muted">Undergraduate student in Computer Science & Mathematics at Ashoka University with research interests in machine learning (NLP, bioacoustics, computational modeling for healthcare and environmental data). I enjoy building models, analyzing real-world datasets, and turning research into robust experiments and reproducible code.</p>
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-labelledby="experience">
+          <h2 id="experience">Professional & Research Experience</h2>
+          <ul class="list">
+            <li class="item">
+              <div class="role">Research Intern — Animal Acoustics Project, Ashoka University</div>
+              <div class="muted">Aug 2025 — Present</div>
+              <p class="muted">Worked on ML approaches for bioacoustic signal classification focusing on Asian elephant vocalizations. Benchmarked deep learning models vs. Cornell ELP baseline, performed experiments with CNN & RNN architectures and evaluation analyses.</p>
+            </li>
+
+            <li class="item">
+              <div class="role">Research Intern — Augmented Health Systems Lab, Ashoka University</div>
+              <div class="muted">May — Aug 2025</div>
+              <p class="muted">Evaluated nuclei segmentation & classification on the PanNuke dataset, analysed accuracy metrics and supported development of digital pathology annotation tools.</p>
+            </li>
+
+            <li class="item">
+              <div class="role">Research Intern — (Environmental Data), Ashoka University</div>
+              <div class="muted">May — Aug 2025</div>
+              <p class="muted">Processed weather data using Microsoft Aurora; applied polynomial regression to estimate soil composition and health for plantation sites and prepared cleaned datasets for modeling.</p>
+            </li>
+
+            <li class="item">
+              <div class="role">Intern — L'Oréal, Summer Immersion Program</div>
+              <div class="muted">June — July 2025</div>
+              <p class="muted">Conducted market research and competitive analysis in Travel Retail Asia-Pacific; presented findings to the Head of Travel Retail and gained exposure to supply chain and operations.</p>
+            </li>
+
+            <li class="item">
+              <div class="role">Teaching Assistant — Introduction to Computer Science, Ashoka University</div>
+              <div class="muted">(Date)</div>
+              <p class="muted">Assisted Prof. Aalok Thakkar in teaching foundational CS concepts using OCaml. Designed assignments and assessments to reinforce functional programming, recursion and algorithms.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-labelledby="education">
+          <h2 id="education">Education</h2>
+          <div class="item" style="border-bottom:0;padding:0">
+            <div class="role">Ashoka University — B.Sc. (Hons) Computer Science & Mathematics</div>
+            <div class="muted">CGPA 3.78 • Minor in Economics</div>
+            <p class="muted">Relevant coursework and research projects in ML, NLP, computational modeling, and data analysis.</p>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-labelledby="skills">
+          <h2 id="skills">Skills & Tools</h2>
+          <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">PyTorch / TensorFlow</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">NLP</div>
+            <div class="skill">Data Cleaning</div>
+            <div class="skill">OCaml</div>
+            <div class="skill">Microsoft Aurora</div>
+            <div class="skill">Pandas / NumPy</div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:16px" aria-labelledby="projects">
+          <h2 id="projects">Selected Projects</h2>
+          <ul class="list">
+            <li class="item">
+              <div class="role">Bioacoustics model benchmarking</div>
+              <div class="muted">CNN & RNN experiments on elephant vocalizations — evaluation vs. ELP baseline</div>
+            </li>
+            <li class="item">
+              <div class="role">PanNuke nuclei segmentation analysis</div>
+              <div class="muted">Benchmarked segmentation accuracy across nuclei types and supported annotation tooling</div>
+            </li>
+            <li class="item">
+              <div class="role">Soil composition prediction</div>
+              <div class="muted">Weather data modeling and polynomial regression for soil health estimation</div>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+
+      <aside>
+        <div class="card contact">
+          <h2>Contact</h2>
+          <div class="muted">Phone: +91 70137 44123</div>
+          <div class="muted">Email: kaurrehmat006@gmail.com</div>
+          <div class="muted">Location: New Delhi</div>
+          <div style="margin-top:10px">
+            <a href="#projects">Download Résumé (PDF)</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Highlights</h2>
+          <ul class="list">
+            <li class="item"><div class="role">Strong ML research background</div><div class="muted">Bioacoustics, medical imaging, environmental modeling</div></li>
+            <li class="item"><div class="role">Industry exposure</div><div class="muted">L'Oréal Summer Immersion — market research</div></li>
+            <li class="item"><div class="role">Teaching experience</div><div class="muted">TA for introductory CS course using OCaml</div></li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Quick Links</h2>
+          <div class="muted"><a href="#about">About</a> • <a href="#experience">Experience</a> • <a href="#projects">Projects</a></div>
+        </div>
+
+      </aside>
+    </div>
+
+    <footer class="muted">Made with ♥ • Built from résumé. Want a custom color scheme, extra pages (blog/portfolio), or a downloadable CV button? Reply and I'll update it.</footer>
+  </main>
+</body>
+</html>
