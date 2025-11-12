@@ -4,53 +4,49 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rehmat Kaur — Portfolio</title>
-  <meta name="description" content="Rehmat Kaur — Computer Science & Mathematics student at Ashoka University. ML, NLP, bioacoustics, digital pathology." />
+  <meta name="description" content="Rehmat Kaur — Computer Science & Mathematics student at Ashoka University. ML, NLP, linguistics." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#fff6fb; /* very light pink */
-      --card:#0b0b0b; /* near black cards */
-      --muted:#3b3b3b; /* dark muted text */
+      --bg:#000000; /* blue background */
+      --text:#ffd6e9; /* light pink text */
+      --muted:#ffb7d1; /* softer pink for muted */
       --accent:#ff6fa3; /* pink accent */
-      --glass: rgba(255,255,255,0.06);
+      --card:rgba(255,255,255,0.03);
     }
     *{box-sizing:border-box}
     html,body{height:100%;}
-    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--card);line-height:1.45;position:relative;overflow-x:hidden}
+    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);line-height:1.45;position:relative;overflow-x:hidden}
 
-    /* subtle cute tree SVG in the background */
-    .bg-tree{position:fixed;left:-60px;bottom:-40px;width:420px;opacity:0.08;pointer-events:none;z-index:0}
+    /* subtle tree SVG background */
+    .bg-tree{position:fixed;right:-60px;bottom:-40px;width:520px;opacity:0.06;pointer-events:none;z-index:0}
 
-    /* layout: left column + right content */
     .wrap{max-width:1100px;margin:36px auto;padding:20px;display:grid;grid-template-columns:260px 1fr;gap:28px;position:relative;z-index:1}
 
-    /* left sidebar */
-    .sidebar{background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(255,255,255,0.85));padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#ffd6e9);display:flex;align-items:center;justify-content:center;font-weight:700;color:#2b0b10;font-size:36px;margin:0 auto}
-    .name{text-align:center;margin-top:14px;font-size:20px;font-weight:700}
+    .sidebar{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.2)}
+    .avatar{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#ffb7d1);display:flex;align-items:center;justify-content:center;font-weight:700;color:#2b0b10;font-size:36px;margin:0 auto}
+    .name{text-align:center;margin-top:14px;font-size:20px;font-weight:700;color:var(--text)}
     .role{text-align:center;color:var(--muted);margin-top:6px;font-size:13px}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,111,163,0.06);color:var(--muted);font-size:13px;margin:8px 4px}
     .contact{margin-top:16px;font-size:13px;color:var(--muted)}
     .contact a{color:var(--accent);text-decoration:none}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,111,163,0.08);color:var(--muted);font-size:13px;margin:8px 4px}
-    .social{display:flex;gap:10px;justify-content:center;margin-top:12px}
-    .social a{color:var(--muted);text-decoration:none;font-size:14px}
 
-    /* content area */
     .content{display:flex;flex-direction:column;gap:18px}
-    .card{background:#ffffff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(11,11,11,0.06)}
-    h2{margin:0 0 10px 0;font-size:16px;color:#0b0b0b}
+    .card{background:rgba(255,255,255,0.02);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    h2{margin:0 0 10px 0;font-size:16px;color:var(--text)}
     .muted{color:var(--muted);font-size:14px}
     .list{margin:0;padding:0;list-style:none}
-    .item{padding:12px 0;border-bottom:1px dashed rgba(11,11,11,0.04)}
+    .item{padding:12px 0;border-bottom:1px dashed rgba(255,255,255,0.02)}
     .item:last-child{border-bottom:0}
-    .role-small{font-weight:600;color:#0b0b0b}
+    .role-small{font-weight:600;color:var(--text)}
 
-    /* skills grid */
     .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .skill{background:rgba(255,111,163,0.08);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--muted)}
+    .skill{background:rgba(255,111,163,0.06);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--text)}
+    .models{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .model{background:transparent;border:1px solid rgba(255,111,163,0.12);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--muted)}
 
-    .btn{background:transparent;border:1px solid rgba(11,11,11,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
+    .btn{background:transparent;border:1px solid rgba(255,111,163,0.08);padding:8px 12px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
 
     footer{color:var(--muted);font-size:13px;text-align:center;margin-top:20px}
 
@@ -58,12 +54,12 @@
   </style>
 </head>
 <body>
-  <!-- cute tree SVG background -->
-  <svg class="bg-tree" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g fill="none" stroke="#5b2a2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M100 180 C90 150, 70 120, 100 90 C130 120, 110 150, 100 180 Z" fill="#ffc9db" opacity="0.9"/>
-      <path d="M100 90 C80 70, 60 60, 50 50 C40 40, 80 30, 100 40 C120 30, 160 40, 150 50 C140 60, 120 70, 100 90 Z" fill="#ffeff4" opacity="0.9"/>
-      <rect x="95" y="140" width="10" height="40" rx="2" fill="#8b5a4a"/>
+  <!-- tree SVG background -->
+  <svg class="bg-tree" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#ff6fa3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M120 230 C100 190, 80 150, 120 110 C160 150, 140 190, 120 230 Z" fill="#ffbfdc" opacity="0.12"/>
+      <path d="M120 110 C95 90, 70 75, 50 60 C30 45, 70 35, 120 50 C170 35, 210 45, 190 60 C170 75, 145 90, 120 110 Z" fill="#ffdff0" opacity="0.12"/>
+      <rect x="115" y="170" width="10" height="60" rx="3" fill="#8b5a4a"/>
     </g>
   </svg>
 
@@ -73,16 +69,12 @@
       <div class="name">Rehmat Kaur</div>
       <div class="role">B.Sc. (Hons) CS & Mathematics — Ashoka University</div>
       <div style="text-align:center;margin-top:10px">
-        <span class="pill">ML • NLP • Bioacoustics</span>
+        <span class="pill">ML • NLP • Linguistics</span>
       </div>
 
       <div class="contact">
         <div style="margin-top:12px"><strong>Email</strong><br><a href="mailto:kaurrehmat006@gmail.com">kaurrehmat006@gmail.com</a></div>
         <div style="margin-top:10px"><strong>Location</strong><br><span class="muted">New Delhi</span></div>
-        <div class="social" style="margin-top:12px;justify-content:center">
-          <a href="https://github.com/Rehmat-Kaur6">GitHub</a>
-        </div>
-
         <div style="margin-top:14px;text-align:center">
           <a class="btn" href="Rehmat_Kaur_Resume.pdf" download>Download CV</a>
         </div>
@@ -92,7 +84,7 @@
     <section class="content">
       <div class="card">
         <h2>About</h2>
-        <p class="muted">Undergraduate student in Computer Science & Mathematics at Ashoka University with research interests in machine learning (particularly NLP and Computational Linguistics)</p>
+        <p class="muted">Undergraduate student in Computer Science & Mathematics at Ashoka University with research interests in machine learning (particularly NLP and Computational Linguistics).</p>
       </div>
 
       <div class="card">
@@ -123,19 +115,28 @@
           </li>
         </ul>
       </div>
+      
 
       <div class="card">
-        <h2>Skills</h2>
+        <h2>Skills & Models</h2>
         <div class="skills">
           <div class="skill">Python</div>
-          <div class="skill">PyTorch</div>
-          <div class="skill">Machine Learning</div>
-          <div class="skill">NLP</div>
-          <div class="skill">OCaml</div>
+              <div class="skill">NumPy</div>
+              <div class="skill">pandas</div>
+              <div class="skill">scikit-learn</div>
+              <div class="skill">PyTorch</div>
+              <div class="skill">Hugging Face</div>
+              <div class="skill">spaCy</div>
+              <div class="skill">LaTeX</div>
+          <div class="models">
+            <div class="model">Text preprocessing</div>
+            <div class="model">Word embeddings (Word2Vec, GloVe)</div>
+            <div class="model">Transformer models (BERT, DistilBERT)</div>
+            <div class="model">Model evaluation (ROC, F1)</div>
+</div>
         </div>
       </div>
 
-      <footer class="muted">Made with ♥ • Built from résumé — reach out to update colors/pages.</footer>
     </section>
   </main>
 </body>
